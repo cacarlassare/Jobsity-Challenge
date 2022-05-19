@@ -9,6 +9,7 @@ import Foundation
 
 
 struct Series: Codable {
+    
     let id: Int
     let name: String?
     let genres: [String]?
@@ -29,6 +30,7 @@ struct Image: Codable {
     let medium: String
     let original: String
 }
+
 
 struct Schedule: Codable {
     let time: String

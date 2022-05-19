@@ -12,7 +12,7 @@ typealias GetSearchedSeriesResponse = [GetSearchedSeriesResponseContent]
 
 
 struct GetSearchedSeriesResponseContent: Codable {
-
+    
     let content: Series
 
     enum CodingKeys: String, CodingKey {

@@ -10,14 +10,15 @@ import Foundation
 
 struct GetEpisodesEndpoint: Endpoint {
     
-    init(seriesID: Int) {
-        self.path = Constants.URL.tvMazeEpisodesEndpoint(seriesID: seriesID)
-    }
-    
     var baseURL: String = Constants.URL.tvMazeBaseURL
     var path: String
     var parameters: [String : String]?
     var method: HTTPMethod = .get
     var header: [String : String]? = ["Content-Type": "application/json;charset=utf-8"]
     var body: [String : String]?
+    
+    
+    init(seriesID: Int) {
+        self.path = Constants.URL.tvMazeEpisodesEndpoint(seriesID: seriesID)
+    }
 }
