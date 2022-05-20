@@ -32,6 +32,14 @@ class SeriesGridViewController: UIViewController {
         self.loadSeries()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if #available(iOS 11.0, *) {
+            self.navigationItem.hidesSearchBarWhenScrolling = false // Show Searchbar without having to scroll
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.SEGUES.seriesDetail, let destinationVC = segue.destination as? SeriesDetailTableViewController, let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
                 let selectedSeries = self.viewModel.allSeriesResults[indexPath.row]

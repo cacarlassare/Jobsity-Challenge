@@ -8,28 +8,29 @@
 import UIKit
 
 
+fileprivate var loadingContainerView: UIView?
+
+
 extension UIViewController {
     
-    func showLoading(message: String = "Loading") {
+    func showLoading() {
+        loadingContainerView = UIView(frame: self.view.bounds)
         
-        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-        let activityIndicator = UIActivityIndicatorView(style: .medium)
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.isUserInteractionEnabled = false
-        activityIndicator.startAnimating()
-
-        alertController.view.addSubview(activityIndicator)
-        alertController.view.heightAnchor.constraint(equalToConstant: 95).isActive = true
-
-        activityIndicator.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor, constant: 0).isActive = true
-        activityIndicator.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -20).isActive = true
-
-        self.present(alertController, animated: false)
+        if let loadingContainerView = loadingContainerView {
+            loadingContainerView.backgroundColor = .init(white: 0.5, alpha: 0.5)
+            
+            let indicator = UIActivityIndicatorView(style: .large)
+            indicator.center = loadingContainerView.center
+            indicator.color = .white
+            indicator.startAnimating()
+            
+            loadingContainerView.addSubview(indicator)
+            self.view.addSubview(loadingContainerView)
+        }
     }
     
     func dismissLoading() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.dismiss(animated: false, completion: nil)
-        }
+        loadingContainerView?.removeFromSuperview()
+        loadingContainerView = nil
     }
 }
