@@ -27,4 +27,23 @@ struct Constants {
             return "/shows/\(seriesID)?embed=episodes"
         }
     }
+    
+    
+    struct SEGUES {
+        
+        static let seriesDetail = "SeriesDetailSegue"
+        static let episodeDetail = "EpisodeDetailSegue"
+    }
+    
+    
+    struct CELL_IDENTIFIERS {
+        
+        // Series Card
+        static let seriesCollectionViewCell = "SeriesCollectionViewCell"
+        
+        // Series Detail
+        static let seriesDetailTableViewCell = "SeriesDetailTableViewCell"
+        static let seriesSeasonHeaderViewCell = "SeriesSeasonHeaderViewCell"
+        static let seriesEpisodesTableViewCell = "SeriesEpisodesTableViewCell"
+    }
 }

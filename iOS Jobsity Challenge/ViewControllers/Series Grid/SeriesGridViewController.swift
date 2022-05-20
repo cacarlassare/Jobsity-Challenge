@@ -33,7 +33,7 @@ class SeriesGridViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SeriesDetailSegue", let destinationVC = segue.destination as? SeriesDetailTableViewController, let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
+        if segue.identifier == Constants.SEGUES.seriesDetail, let destinationVC = segue.destination as? SeriesDetailTableViewController, let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
                 let selectedSeries = self.viewModel.allSeriesResults[indexPath.row]
                 destinationVC.config(object: selectedSeries)
         }
@@ -47,7 +47,7 @@ class SeriesGridViewController: UIViewController {
     
     private func setupCollectionView() {
         let seriesCollectionViewCellNib = UINib(nibName: "SeriesCollectionViewCell", bundle: nil)
-        self.collectionView.register(seriesCollectionViewCellNib, forCellWithReuseIdentifier: "SeriesCollectionViewCell")
+        self.collectionView.register(seriesCollectionViewCellNib, forCellWithReuseIdentifier: Constants.CELL_IDENTIFIERS.seriesCollectionViewCell)
     }
     
     private func loadSeries(name: String? = nil) {
@@ -92,7 +92,7 @@ extension SeriesGridViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCollectionViewCell", for: indexPath) as? SeriesCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CELL_IDENTIFIERS.seriesCollectionViewCell, for: indexPath) as? SeriesCollectionViewCell {
             cell.config(object: self.viewModel.allSeriesResults[indexPath.row])
             return cell
         }
@@ -101,8 +101,7 @@ extension SeriesGridViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "SeriesDetailSegue", sender: nil)
-        
+        self.performSegue(withIdentifier: Constants.SEGUES.seriesDetail, sender: nil)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     

@@ -20,7 +20,6 @@ class SeriesDetailTableViewController: UITableViewController, Configurable {
         self.series = object
     }
     
-    
     // Lyfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class SeriesDetailTableViewController: UITableViewController, Configurable {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EpisodeDetailSegue", let destinationVC = segue.destination as? EpisodeDetailViewController, let selectedEpisode = self.selectedEpisode {
+        if segue.identifier == Constants.SEGUES.episodeDetail, let destinationVC = segue.destination as? EpisodeDetailViewController, let selectedEpisode = self.selectedEpisode {
             destinationVC.config(object: selectedEpisode)
         }
     }
@@ -40,13 +39,13 @@ class SeriesDetailTableViewController: UITableViewController, Configurable {
     // Methods
     private func setupTableView() {
         let seriesDetailTableViewCellNib = UINib(nibName: "SeriesDetailTableViewCell", bundle: nil)
-        self.tableView.register(seriesDetailTableViewCellNib, forCellReuseIdentifier: "SeriesDetailTableViewCell")
+        self.tableView.register(seriesDetailTableViewCellNib, forCellReuseIdentifier: Constants.CELL_IDENTIFIERS.seriesDetailTableViewCell)
         
         let seriesSeasonHeaderViewCell = UINib(nibName: "SeriesSeasonHeaderViewCell", bundle: nil)
-        self.tableView.register(seriesSeasonHeaderViewCell, forHeaderFooterViewReuseIdentifier: "SeriesSeasonHeaderViewCell")
+        self.tableView.register(seriesSeasonHeaderViewCell, forHeaderFooterViewReuseIdentifier: Constants.CELL_IDENTIFIERS.seriesSeasonHeaderViewCell)
         
         let seriesEpisodeTableViewCellNib = UINib(nibName: "SeriesEpisodesTableViewCell", bundle: nil)
-        self.tableView.register(seriesEpisodeTableViewCellNib, forCellReuseIdentifier: "SeriesEpisodesTableViewCell")
+        self.tableView.register(seriesEpisodeTableViewCellNib, forCellReuseIdentifier: Constants.CELL_IDENTIFIERS.seriesEpisodesTableViewCell)
     }
     
     private func getEpisodes() {
@@ -92,7 +91,7 @@ extension SeriesDetailTableViewController {
         
         var headerView: UITableViewHeaderFooterView? = nil
         
-        if let dequeuedHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SeriesSeasonHeaderViewCell") as? SeriesSeasonHeaderViewCell {
+        if let dequeuedHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.CELL_IDENTIFIERS.seriesSeasonHeaderViewCell) as? SeriesSeasonHeaderViewCell {
             dequeuedHeaderView.config(object: section)
             
             headerView = dequeuedHeaderView
@@ -115,19 +114,17 @@ extension SeriesDetailTableViewController {
         
         switch indexPath.section {
             case 0:
-                let dequeuedReusableCell = tableView.dequeueReusableCell(withIdentifier: "SeriesDetailTableViewCell", for: indexPath) as! SeriesDetailTableViewCell
+                let dequeuedReusableCell = tableView.dequeueReusableCell(withIdentifier: Constants.CELL_IDENTIFIERS.seriesDetailTableViewCell, for: indexPath) as! SeriesDetailTableViewCell
                 
                 dequeuedReusableCell.config(object: self.series!)
-                
                 cell = dequeuedReusableCell
                 
             default:
-                let dequeuedReusableCell = tableView.dequeueReusableCell(withIdentifier: "SeriesEpisodesTableViewCell", for: indexPath) as! SeriesEpisodesTableViewCell
+                let dequeuedReusableCell = tableView.dequeueReusableCell(withIdentifier: Constants.CELL_IDENTIFIERS.seriesEpisodesTableViewCell, for: indexPath) as! SeriesEpisodesTableViewCell
                 
                 if let episode = self.viewModel.episodesBySeason[indexPath.section]?[indexPath.row] {
                     dequeuedReusableCell.config(object: episode)
                 }
-                
                 cell = dequeuedReusableCell
         }
         
@@ -142,7 +139,7 @@ extension SeriesDetailTableViewController {
             default:
                 if let episode = self.viewModel.episodesBySeason[indexPath.section]?[indexPath.row] {
                     self.selectedEpisode = episode
-                    self.performSegue(withIdentifier: "EpisodeDetailSegue", sender: nil)
+                    self.performSegue(withIdentifier: Constants.SEGUES.episodeDetail, sender: nil)
                 }
                 
                 tableView.deselectRow(at: indexPath, animated: true)

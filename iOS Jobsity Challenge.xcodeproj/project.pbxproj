@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		646366342836FD6E009B563D /* SeriesEndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646366332836FD6E009B563D /* SeriesEndpointTest.swift */; };
+		64636636283702F2009B563D /* ModelDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64636635283702F2009B563D /* ModelDecodingTests.swift */; };
+		64636638283710A8009B563D /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64636637283710A8009B563D /* UtilsTest.swift */; };
 		64A269EF2834626700D55886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A269EE2834626700D55886 /* AppDelegate.swift */; };
 		64A269F12834626700D55886 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A269F02834626700D55886 /* SceneDelegate.swift */; };
 		64A269F32834626700D55886 /* SeriesGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A269F22834626700D55886 /* SeriesGridViewController.swift */; };
 		64A269F62834626700D55886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A269F42834626700D55886 /* Main.storyboard */; };
 		64A269F82834626B00D55886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A269F72834626B00D55886 /* Assets.xcassets */; };
 		64A269FB2834626B00D55886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A269F92834626B00D55886 /* LaunchScreen.storyboard */; };
-		64A26A062834626B00D55886 /* iOS_Jobsity_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A26A052834626B00D55886 /* iOS_Jobsity_ChallengeTests.swift */; };
+		64A26A062834626B00D55886 /* EpisodesEndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A26A052834626B00D55886 /* EpisodesEndpointTest.swift */; };
 		64A26A102834626C00D55886 /* iOS_Jobsity_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A26A0F2834626C00D55886 /* iOS_Jobsity_ChallengeUITests.swift */; };
 		64A26A122834626C00D55886 /* iOS_Jobsity_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A26A112834626C00D55886 /* iOS_Jobsity_ChallengeUITestsLaunchTests.swift */; };
 		64A26A26283486BF00D55886 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A26A25283486BF00D55886 /* Series.swift */; };
@@ -138,6 +141,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		646366332836FD6E009B563D /* SeriesEndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesEndpointTest.swift; sourceTree = "<group>"; };
+		64636635283702F2009B563D /* ModelDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDecodingTests.swift; sourceTree = "<group>"; };
+		64636637283710A8009B563D /* UtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
 		64A269EB2834626700D55886 /* iOS Jobsity Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Jobsity Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A269EE2834626700D55886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64A269F02834626700D55886 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +153,7 @@
 		64A269FA2834626B00D55886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64A269FC2834626B00D55886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64A26A012834626B00D55886 /* iOS Jobsity ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Jobsity ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		64A26A052834626B00D55886 /* iOS_Jobsity_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Jobsity_ChallengeTests.swift; sourceTree = "<group>"; };
+		64A26A052834626B00D55886 /* EpisodesEndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesEndpointTest.swift; sourceTree = "<group>"; };
 		64A26A0B2834626C00D55886 /* iOS Jobsity ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Jobsity ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A26A0F2834626C00D55886 /* iOS_Jobsity_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Jobsity_ChallengeUITests.swift; sourceTree = "<group>"; };
 		64A26A112834626C00D55886 /* iOS_Jobsity_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Jobsity_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -248,7 +254,10 @@
 		64A26A042834626B00D55886 /* iOS Jobsity ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				64A26A052834626B00D55886 /* iOS_Jobsity_ChallengeTests.swift */,
+				64A26A052834626B00D55886 /* EpisodesEndpointTest.swift */,
+				646366332836FD6E009B563D /* SeriesEndpointTest.swift */,
+				64636635283702F2009B563D /* ModelDecodingTests.swift */,
+				64636637283710A8009B563D /* UtilsTest.swift */,
 			);
 			path = "iOS Jobsity ChallengeTests";
 			sourceTree = "<group>";
@@ -697,9 +706,10 @@
 				64A26A612835694300D55886 /* ViewModelDelegate.swift in Sources */,
 				64A26A662835709700D55886 /* UIViewController+Alerts.swift in Sources */,
 				64A26A2B2834871B00D55886 /* Episode.swift in Sources */,
+				64636636283702F2009B563D /* ModelDecodingTests.swift in Sources */,
 				64A26A432834C14100D55886 /* HTTPMethod.swift in Sources */,
 				64A26A3B2834C02200D55886 /* NetworkClient.swift in Sources */,
-				64A26A062834626B00D55886 /* iOS_Jobsity_ChallengeTests.swift in Sources */,
+				64A26A062834626B00D55886 /* EpisodesEndpointTest.swift in Sources */,
 				64A26AEB2836BE8F00D55886 /* GetSeriesResponse.swift in Sources */,
 				64A26AF52836DD8000D55886 /* EpisodeDetailView.swift in Sources */,
 				64A26A9128359CA500D55886 /* SeriesSeasonHeaderViewCell.swift in Sources */,
@@ -716,9 +726,11 @@
 				64A26A7C283595B800D55886 /* SeriesDetailTableViewController.swift in Sources */,
 				64A26AA12835A38600D55886 /* SeriesDetailViewModel.swift in Sources */,
 				64A26A312834A0B900D55886 /* SeriesCollectionViewCell.swift in Sources */,
+				64636638283710A8009B563D /* UtilsTest.swift in Sources */,
 				64A26A7728358AE500D55886 /* GetSearchedSeriesEndpoint.swift in Sources */,
 				64A26A472834C1EB00D55886 /* RequestError.swift in Sources */,
 				64A26AF92836E2E600D55886 /* UIViewController+Loading.swift in Sources */,
+				646366342836FD6E009B563D /* SeriesEndpointTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
